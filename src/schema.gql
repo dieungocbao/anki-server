@@ -1,0 +1,40 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  _id: ID!
+  firstName: String
+  lastName: String
+  username: String!
+  email: String!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type FieldError {
+  field: String!
+  message: String!
+}
+
+type UserResponse {
+  errors: [FieldError!]
+  user: User
+}
+
+type Query {
+  users: [User!]!
+  user(id: String!): User
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserDTO!): UserResponse!
+}
+
+input CreateUserDTO {
+  username: String!
+  email: String!
+  password: String!
+  firstName: String
+  lastName: String
+}
